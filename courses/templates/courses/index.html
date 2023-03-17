@@ -1,0 +1,26 @@
+{% extends 'layout.html' %} 
+{% load static %}
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'courses/css/style.css' %}">
+{% endblock css_files %}
+{% block content %}
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-3 bg-light">
+      {% include 'courses/partials/_categories.html'%}
+    </div>
+    <div class="col-9 bg-light">
+      {% for course in courses %} 
+        
+              {% include 'courses/partials/_course.html'%}
+        
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock content %} #layout a gönderir content içindeki yeri .layout ile
+birleşir. #/about sayfası çağrıldığında layotdaki ğçeriği kullanır.çünkü layout
+dan kalıtım aldı.content e ise kendi contentini yarleştirir. 
+{% block title %}
+kurslar 
+{% endblock %}

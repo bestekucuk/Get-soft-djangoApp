@@ -1,0 +1,27 @@
+{% extends 'layout.html' %} {% block content %}
+
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-3">
+      <!---menu -->
+      <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action"
+          >programlama</a
+        >
+        <a href="#" class="list-group-item list-group-item-action"
+          >web geliştirme</a
+        >
+        <a href="#" class="list-group-item list-group-item-action">mobil</a>
+      </div>
+    </div>
+    <div class="col-9 bg-light">
+      <!---content -->
+      <h1>ana sayfa</h1>
+    </div>
+  </div>
+</div>
+
+{% endblock content %} #layout a gönderir content içindeki yeri .layout ile
+birleşir. #/about sayfası çağrıldığında layotdaki ğçeriği kullanır.çünkü layout
+dan kalıtım aldı.content e ise kendi contentini yarleştirir. {% block title %}
+ana sayfa {% endblock %}
