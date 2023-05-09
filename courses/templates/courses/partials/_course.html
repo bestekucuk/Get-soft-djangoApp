@@ -4,7 +4,7 @@
     <div class="col-4">
       <img
         class="img-fluid rounded-start"
-        src="{% static 'courses/img/'|add:course.imageUrl %}"
+        src="{{course.image.url}}"
         alt=" {{course.title}}"
       />
     </div>
@@ -13,7 +13,7 @@
         <h5 class="card-title">
           <a href="{% url 'course_details' course.slug %}">{{course.title}}</a>
           </h5>
-        <p class="card-text">{{course.description|truncatechars:15}}</p>
+        <p class="card-text">{{course.subtitle}}</p>
       <!--#truncatechars ilk 15 harfi gösterir-->  
         <!-- <span>
            {% if course.isUpdated %}

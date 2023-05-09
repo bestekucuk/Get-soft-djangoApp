@@ -1,0 +1,47 @@
+{% extends 'layout.html' %} 
+{% load static %}
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'courses/css/style.css' %}">
+{% endblock css_files %}
+{% block content %}
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12 bg-light">
+     <table class="table table-sm table-bordered">
+        <thead>
+          <tr>
+            <th style="width:120px"></th>
+            <th>Title</th>
+            <th>Slug</th>
+            <th style="width:120px"></th>
+          </tr>
+        </thead>
+         <tbody>
+          {% for course in  courses%}
+               <tr>
+                <td>
+                   <img src="{{course.image.url}}" class="img-fluid">
+                </td>
+                <td>{{course.title|title}}</td>
+                <td>{{course.slug}}</td>
+                <td>
+                   <a href="{% url 'course_edit' course.id %}" class="btn btn-primary btn-sm">Güncelle</a>
+                   <a href="{% url 'course_delete' course.id %}" class="btn btn-primary btn-sm">Sil</a>
+                </td>
+               </tr>
+          {% endfor %}
+         </tbody>
+
+
+
+
+     </table>
+    </div>
+  </div>
+</div>
+{% endblock content %} #layout a gönderir content içindeki yeri .layout ile
+birleşir. #/about sayfası çağrıldığında layotdaki ğçeriği kullanır.çünkü layout
+dan kalıtım aldı.content e ise kendi contentini yarleştirir. 
+{% block title %}
+{{course.title}}
+{% endblock %}

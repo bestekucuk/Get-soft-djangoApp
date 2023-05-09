@@ -1,0 +1,25 @@
+{% extends 'layout.html' %} 
+{% load static %}
+{% block css_files %}
+<link rel="stylesheet" href="{% static 'courses/css/style.css' %}">
+{% endblock css_files %}
+{% block content %}
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-12 bg-light">
+   <form action="{% url 'create_course2' %}" class="" method="POST" enctype="multipart/form-data" novalidate>
+      {% csrf_token %}
+       {% include 'partials/_form.html' %}
+      <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Kaydet</button> 
+      </div>
+   </form>
+    </div>
+    </div>
+  </div>
+{% endblock content %} #layout a gönderir content içindeki yeri .layout ile
+birleşir. #/about sayfası çağrıldığında layotdaki ğçeriği kullanır.çünkü layout
+dan kalıtım aldı.content e ise kendi contentini yarleştirir. 
+{% block title %}
+{{course.title}}
+{% endblock %}

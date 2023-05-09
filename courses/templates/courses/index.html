@@ -10,11 +10,16 @@
       {% include 'courses/partials/_categories.html'%}
     </div>
     <div class="col-9 bg-light">
+      {% include 'courses/partials/_slider.html' %}
+      {% if courses|length == 0 %}
+      <div class="alert alert-warning">Kurs Bulunamadı</div>
+      {% endif %}
       {% for course in courses %} 
         
               {% include 'courses/partials/_course.html'%}
         
       {% endfor %}
+     
     </div>
   </div>
 </div>
